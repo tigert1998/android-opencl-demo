@@ -5,6 +5,7 @@ project("Android OpenCL Demo" LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+option(BUILD_SHARED_LIBS OFF)
 add_subdirectory(3rd_party/OpenCL-SDK)
 
 set(THIRD_PARTY_ROOT_PATH "${PROJECT_SOURCE_DIR}/3rd_party")

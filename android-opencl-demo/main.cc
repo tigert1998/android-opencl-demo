@@ -22,7 +22,11 @@ void LogCLPlatformsInfo() {
   cl_platform_id platform_ids[N];
   uint32_t num_platforms;
 
-  clGetPlatformIDs(N, platform_ids, &num_platforms);
+  auto ret = clGetPlatformIDs(N, platform_ids, &num_platforms);
+  if (ret != CL_SUCCESS) {
+    fprintf(stderr, "clGetPlatformIDs = %d\n", ret);
+    exit(1);
+  }
 
   for (int i = 0; i < num_platforms; i++) {
     for (auto pair : std::vector<std::pair<std::string, uint32_t>>({
@@ -40,6 +44,9 @@ void LogCLPlatformsInfo() {
 }
 
 int main() {
+  fprintf(stdout, "[Android OpenCL Demo]\n");
+  fflush(stdout);
+
   LogCLPlatformsInfo();
   return 0;
 }
