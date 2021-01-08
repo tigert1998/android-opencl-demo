@@ -1,3 +1,6 @@
 [submodule "3rd_party/OpenCL-SDK"]
 	path = 3rd_party/OpenCL-SDK
 	url = https://github.com/KhronosGroup/OpenCL-SDK
+[submodule "3rd_party/libopencl-stub"]
+	path = 3rd_party/libopencl-stub
+	url = https://github.com/krrishnarraj/libopencl-stub

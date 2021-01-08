@@ -43,10 +43,14 @@ void LogCLPlatformsInfo() {
   }
 }
 
+void SetOpenCLStubEnv() {
+  setenv("LIBOPENCL_SO_PATH", "/system/vendor/lib64/libOpenCL.so", 1);
+}
+
 int main() {
   fprintf(stdout, "[Android OpenCL Demo]\n");
   fflush(stdout);
-
+  SetOpenCLStubEnv();
   LogCLPlatformsInfo();
   return 0;
 }
